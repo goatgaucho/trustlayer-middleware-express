@@ -1,0 +1,49 @@
+{
+  "name": "@trustlayer/middleware-express",
+  "version": "0.1.0",
+  "description": "Drop-in Express middleware that runs every incoming caller through the TrustLayer /gate before your paywall fires. Pass-through if trustworthy, 403 if not.",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/middleware.test.js"
+  },
+  "keywords": [
+    "trustlayer",
+    "x402",
+    "agent",
+    "reputation",
+    "sybil",
+    "erc-8004",
+    "express",
+    "middleware",
+    "trust-gate",
+    "agent-economy"
+  ],
+  "author": "TrustLayer (https://thetrustlayer.xyz)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/goatgaucho/trustlayer-middleware-express.git"
+  },
+  "homepage": "https://thetrustlayer.xyz",
+  "bugs": {
+    "url": "https://github.com/goatgaucho/trustlayer-middleware-express/issues"
+  },
+  "peerDependencies": {
+    "express": ">=4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
