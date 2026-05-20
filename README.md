@@ -128,11 +128,23 @@ These are the same thresholds applied across our 19-chain coverage (BSC, Ethereu
 - **Free tier**: 100 requests/hour/IP at `/gate`. Anonymous, no setup.
 - **Paid plans**: `$49/mo` (50K calls), `$99/mo` (100K), `$199/mo` (1M). Subscribe at <https://api.thetrustlayer.xyz/pricing>. Pass the issued API key via the `apiKey` option.
 
+## Bonus: multi-attestation envelope verifier
+
+This repo also ships [`verify-attestation.js`](./verify-attestation.js) — a standalone CLI verifier for the [InsumerAPI multi-attestation envelope](https://github.com/douglasborthwick-crypto/insumer-examples/issues/1) returned by `GET /attest/wallet/:address`. Fetches the envelope, fetches JWKS, re-canonicalizes the signed block, verifies the P1363 ES256 sig.
+
+```bash
+node verify-attestation.js 0xda977767452c5dd021624511f14df67b6c9c2c1b
+# → ✅ PASS — signature verified.
+```
+
+No npm deps — uses Node's built-in `crypto` and `fetch`. Works against any issuer that follows the envelope shape: just override `TRUSTLAYER_API` env var (script naming is a holdover; the verification logic is issuer-agnostic).
+
 ## Related
 
 - TrustLayer API: <https://api.thetrustlayer.xyz>
 - OpenAPI spec: <https://api.thetrustlayer.xyz/openapi.json>
 - MCP server: <https://api.thetrustlayer.xyz/mcp>
+- Multi-attestation envelope spec: <https://github.com/douglasborthwick-crypto/insumer-examples/issues/1>
 - Source / issues: <https://github.com/goatgaucho/trustlayer-middleware-express>
 
 ## License
