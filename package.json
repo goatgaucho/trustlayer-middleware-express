@@ -1,6 +1,6 @@
 {
   "name": "@trustlayer/middleware-express",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Drop-in Express middleware that runs every incoming caller through the TrustLayer /gate before your paywall fires. Pass-through if trustworthy, 403 if not.",
   "main": "src/index.js",
   "exports": {
